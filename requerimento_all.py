@@ -20,7 +20,7 @@ DEFAULT_CAMPANHAS_IDS = [
 
 BASE_URL = "https://painel03.allinmail.com.br/relatorios_envio_v2.php?id_campanha="
 LOGIN_URL = "https://painel03.allinmail.com.br/index.php"
-DEFAULT_USUARIO = "neotass_"
+DEFAULT_USUARIO = "neotass_" #TODO :ALTERAR PARA VARIAVEL DE AMBIENTE 
 DEFAULT_SENHA = "Neo@mkt20252404#"
 DEFAULT_TIMEOUT = 20
 
@@ -29,6 +29,10 @@ DEFAULT_TIMEOUT = 20
 def configurar_navegador(timeout=DEFAULT_TIMEOUT):
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
+    options.add_argument("--headless=new")  # Executa o navegador de forma invisível
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
+
     driver = webdriver.Chrome(
         service=Service(ChromeDriverManager().install()),
         options=options

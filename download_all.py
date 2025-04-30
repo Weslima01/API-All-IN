@@ -24,6 +24,10 @@ SENHA = "Neo@mkt20252404#"
 def configurar_driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
+    options.add_argument("--headless=new")  # Executa o navegador de forma invisível
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
+
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     wait = WebDriverWait(driver, 20)
     return driver, wait
@@ -163,12 +167,7 @@ def salvar_log(download_status):
 # ========================== FUNÇÃO PRINCIPAL ==========================
 
 def executar_download_denuncias(ids_campanha, log_previo=None):
-    """
-    Função principal para ser chamada de fora.
-    Faz login, baixa denúncias das campanhas, unifica arquivos e gera log.
-    """
     download_status = [] if log_previo is None else log_previo.copy()
-
     driver, wait = configurar_driver()
 
     try:

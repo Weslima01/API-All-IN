@@ -122,31 +122,20 @@ def tratamento_optout_info():
     for bloco in dados:
         for item in bloco.get('dados', []):
             row = {
-                'nm_email': item.get('itensConteudo_nm_email'),
-                'motivo': item.get('itensConteudo_motivo'),
-                'dt_optout': item.get('itensConteudo_dt_optout'),
-                'nm_lista': item.get('itensConteudo_nm_lista'),
-                'nm_campanha': item.get('itensConteudo_nm_campanha'),
-                'id_campanha': item.get('itensConteudo_id_campanha')
+                'Email': item.get('itensConteudo_email'),
+                'Nome Campanha': item.get('itensConteudo_sub'),
+                'ID Campanha': item.get('itensConteudo_id_campanha')
             }
             lista_dados.append(row)
 
     df = pd.DataFrame(lista_dados)
-
-    df = df.rename(columns={
-        'nm_email': 'Email',
-        'motivo': 'Motivo',
-        'dt_optout': 'Data Optout',
-        'nm_lista': 'Lista',
-        'nm_campanha': 'Nome Campanha',
-        'id_campanha': 'ID Campanha'
-    })
-
     os.makedirs('dados/silver', exist_ok=True)
     df.to_excel("dados/silver/optout_info.xlsx", index=False)
+
 if __name__ == "__main__":
     tratamento_get_encerradas_info()
     tratamento_relatorio_envio()
     tratamento_relatorio_abertura()
     tratamento_relatorio_clique()
     tratamento_optout_info()
+

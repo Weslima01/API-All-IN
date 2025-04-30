@@ -943,7 +943,7 @@
     },
     {
         "inicio": "2025-04-08",
-        "fim": "2025-04-29",
+        "fim": "2025-04-30",
         "dados": [
             {
                 "itensConteudo_email": "fabio.assis@aqua.com.br",
@@ -1192,6 +1192,56 @@
             },
             {
                 "itensConteudo_email": "jruiscouto@gmail.com",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "diogenes.mendes01@gmail.com",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "dmpadovani@yahoo.com.br",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "vagnergusmao@yahoo.com.br",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "p.kustowichy@gmail.com",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "luizmmcoser@yahoo.com.br",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "samuelldourado19@gmail.com",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11651328"
+            },
+            {
+                "itensConteudo_email": "alison.fa17@hotmail.com",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "rqm28@yahoo.com.br",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "comercial@eletroar-jlle.com.br",
+                "itensConteudo_sub": "Climatiza",
+                "itensConteudo_id_campanha": "11659762"
+            },
+            {
+                "itensConteudo_email": "felipeclisney@gmail.com",
                 "itensConteudo_sub": "Climatiza",
                 "itensConteudo_id_campanha": "11659762"
             }

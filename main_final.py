@@ -9,7 +9,14 @@ from tratamento import tratamento_get_encerradas_info, tratamento_relatorio_envi
 from envio_email import enviar_email_com_anexos
 from requerimento_all import executar_fluxo_spam
 from download_all import executar_download_denuncias
-# from db_utils import upload_excel_to_mysql_incremental
+from db_utils import subida_mysql
+
+# ========================== DEFINIÇÃO DOS PATHS ==========================
+path_envio = r"C:\\Users\\Wesley\\OneDrive - NEOTASS PUBLICIDADE E PRODUCOES LT\\Python\\allin_pipeline\\dados\\silver\\get_envio_info.xlsx"
+path_abertura = r"C:\\Users\\Wesley\\OneDrive - NEOTASS PUBLICIDADE E PRODUCOES LT\\Python\\allin_pipeline\\dados\\silver\\relatorio_abertura.xlsx"
+path_depara = r"C:\\Users\\Wesley\\OneDrive - NEOTASS PUBLICIDADE E PRODUCOES LT\\Python\\allin_pipeline\\DE_PARA_CAMPANHAS.xlsx"
+path_clique = r"C:\\Users\\Wesley\\OneDrive - NEOTASS PUBLICIDADE E PRODUCOES LT\\Python\\allin_pipeline\\dados\\silver\\relatorio_clique.xlsx"
+path_optout = r"C:\\Users\\Wesley\\OneDrive - NEOTASS PUBLICIDADE E PRODUCOES LT\\Python\\allin_pipeline\\dados\\silver\\optout_info.xlsx"
 
 # ========================== CONFIGURAÇÕES ==========================
 
@@ -25,6 +32,7 @@ ARQUIVOS_FIXOS = [
     r"C:\Users\Wesley\OneDrive - NEOTASS PUBLICIDADE E PRODUCOES LT\Python\allin_pipeline\dados\silver\relatorio_clique.xlsx",
     r"C:\\Users\\WesleyLimaNeotassMar\\Python\\api_all_in-main\\dados\\raw\\dados_api_optout.xlsx",
 ]
+#TODO: ATUALIZAR OS ARQUIVOS FIXOS COM O CAMINHO RELATIVO DO PROJETO
 
 # ========================== FUNÇÃO MAIN ==========================
 
@@ -113,7 +121,15 @@ def main():
     else:
         print("❌ Nenhum arquivo encontrado. E-mail não enviado.")
 
+    # ========================== ETAPA 5 - Subida para MySQL ==========================
+    print("\n📤 Subindo dados tratados para o MySQL...")
+    try:
+        subida_mysql(path_envio, path_abertura, path_depara, path_clique, path_optout)
+    except Exception:
+        print("❌ Erro ao subir os dados para o MySQL.")
+        traceback.print_exc()
+
 # # ========================== EXECUÇÃO STANDALONE ==========================
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
